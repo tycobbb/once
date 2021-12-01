@@ -1,0 +1,5 @@
+#!/bin/sh
+cd upon
+psql -U postgres -c "DROP DATABASE upon;"
+psql -U postgres -c "CREATE DATABASE upon;"
+psql -U postgres -d upon -f db/up.sql
