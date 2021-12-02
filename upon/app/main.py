@@ -38,7 +38,7 @@ def index():
   data = recs[0][0]
 
   # compute next key
-  prev_key = data["key"]
+  prev_key = data.get("key") or ""
   next_hsh = hashlib.sha256(
     base64.b64decode(prev_key) +
     base64.b64decode(nonce)

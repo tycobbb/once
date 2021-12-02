@@ -8,7 +8,8 @@ using UnityEngine.Networking;
 public sealed class Unlock {
     // -- constants --
     // the service host url
-    const string k_HostUrl = "http://localhost:5000";
+    const string k_HostUrl = "https://once-upon.herokuapp.com";
+    // const string k_HostUrl = "http://localhost:5000";
 
     // -- props --
     /// if the request succeeded
