@@ -2,12 +2,15 @@ import base64
 import hashlib
 import flask as f
 import json
+import os
 import psycopg2 as pg
 
 # -- main --
 # create flask app
 app = f.Flask(__name__)
-con = pg.connect("user=postgres dbname=upon")
+
+url = os.environ["DATABASE_URL"]
+con = pg.connect(url or "user=postgres dbname=upon")
 
 # -- routes --
 @app.route("/unlock", methods = ["post"])
