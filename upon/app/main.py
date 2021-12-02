@@ -10,7 +10,7 @@ app = f.Flask(__name__)
 con = pg.connect("user=postgres dbname=upon")
 
 # -- routes --
-@app.route("/", methods = ["post"])
+@app.route("/unlock", methods = ["post"])
 def index():
   # get req json
   req = f.request.get_json()

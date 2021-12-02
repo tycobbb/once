@@ -1,13 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 /// the game
 public class Game: MonoBehaviour {
     // -- lifecycle --
     void Start() {
-        var verify = new Verify();
-        verify.Call();
+        Unlock();
     }
 
     void Update() {
@@ -15,6 +14,36 @@ public class Game: MonoBehaviour {
     }
 
     // -- commands --
+    /// unlock the game
+    void Unlock() {
+        StartCoroutine(UnlockAsync());
+    }
+
+    /// unlock the game
+    IEnumerator UnlockAsync() {
+        var unlock = new Unlock();
+
+        // try to unlock the game
+        yield return unlock.Call();
+
+        // if success, start the game, otherwise quit
+        if (unlock.IsSuccess) {
+            Debug.Log("have fun");
+        } else {
+            Debug.Log("goodbye");
+            Quit();
+        }
+    }
+
+    // quit the game
+    void Quit() {
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
+    }
+
     /// run commands based on inputs
     void RunCommands() {
         var k = Keyboard.current;
