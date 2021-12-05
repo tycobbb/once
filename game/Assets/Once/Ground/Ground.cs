@@ -1,5 +1,6 @@
 using UnityEngine;
 
+/// a ground plane that follows the player
 public class Ground: MonoBehaviour {
     // -- config --
     [Header("config")]
@@ -8,11 +9,7 @@ public class Ground: MonoBehaviour {
 
     // -- lifecycle --
     void FixedUpdate() {
-        //
-        var tg = transform;
-        var p1 = m_Target.position;
-        p1.y = 0.0f;
-        tg.position = p1;
+        Follow();
     }
 
     // -- commands --
