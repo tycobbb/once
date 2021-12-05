@@ -1,5 +1,6 @@
 using UnityEngine;
 
+/// a di container
 public sealed class Single: MonoBehaviour {
     // -- module --
     /// the shared instance

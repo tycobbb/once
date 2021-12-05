@@ -18,6 +18,8 @@ public sealed class Unlock {
     // -- command --
     /// verify the can run
     public IEnumerator Call() {
+        Debug.Log($"[unlock] starting...");
+
         // read the current key from disk
         var curr = UnlockKey.Read();
 

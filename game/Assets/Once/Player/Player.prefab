@@ -106,7 +106,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -494,13 +494,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8073847765199990127}
+  - component: {fileID: 4481603674531448763}
   - component: {fileID: 8073847765199990126}
   - component: {fileID: 1319049452831850312}
   - component: {fileID: 5155576628024317162}
   - component: {fileID: 4773397954821589798}
   - component: {fileID: 8073847765199990129}
+  - component: {fileID: 234504465}
   - component: {fileID: 7741282325461415205}
-  - component: {fileID: 667361943}
   m_Layer: 1
   m_Name: Player
   m_TagString: Player
@@ -524,6 +525,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4481603674531448763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073847765199990131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbbd2b8bb5774953a746c0f6dcef634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!143 &8073847765199990126
 CharacterController:
   m_ObjectHideFlags: 0
@@ -757,6 +770,26 @@ MonoBehaviour:
     footstepsSource: {fileID: 8073847764553654464}
     jumpSource: {fileID: 8073847764553654467}
     landSource: {fileID: 8073847764553654469}
+--- !u!114 &234504465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073847765199990131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd97a8e4ed1fe8e43949b305a4b8ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraHead: {fileID: 8073847764100763015}
+  interactionRange: 2
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  ignoreTriggers: 1
+  interactMessage: hi
+  interactInput: Interact
 --- !u!114 &7741282325461415205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,20 +818,3 @@ MonoBehaviour:
     action: {fileID: -5548793354506133487, guid: 6bfcf547d273e4741801c8d56d78df0d, type: 3}
   autoEnableInput: 1
   autoDisableInput: 1
---- !u!114 &667361943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8073847765199990131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8ed092cd6654f1c9575cc95fbe061c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MaxVolume: 1
-  m_Template: {fileID: 0}
-  m_NumSources: 4
-  m_Sources: []
-  m_Instrument: {fileID: 0}

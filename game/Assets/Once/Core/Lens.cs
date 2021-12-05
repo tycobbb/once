@@ -15,6 +15,12 @@ public struct Lens<T> {
         m_Set = set;
     }
 
+    // -- commands --
+    /// set the value
+    public void Set(T val) {
+        m_Set(val);
+    }
+
     // -- props/hot --
     /// the value of this lens
     public T Val {

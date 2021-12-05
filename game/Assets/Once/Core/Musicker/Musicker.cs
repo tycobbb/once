@@ -29,7 +29,7 @@ public sealed class Musicker: MonoBehaviour {
 
     // -- lifecycle --
     void Awake() {
-        // make sure the template is in the
+        // make sure the template is one of the sources
         if (m_Template != null && !m_Sources.Contains(m_Template)) {
             m_Sources.Add(m_Template);
         }
@@ -110,6 +110,15 @@ public sealed class Musicker: MonoBehaviour {
     public void SetMaxDistance(float distance) {
         foreach (var source in m_Sources) {
             source.maxDistance = distance;
+        }
+    }
+
+    /// the the max volume of the loop
+    public void SetMaxVolume(float max) {
+        m_MaxVolume = max;
+
+        foreach (var source in m_Sources) {
+            source.volume = Mathf.Min(source.volume, max);
         }
     }
 
@@ -286,7 +295,7 @@ public sealed class Musicker: MonoBehaviour {
     Lens<float> VolumeLens() {
         return new Lens<float>(
             ( ) => m_Volume,
-            (v) => m_Volume = v
+            (v) => m_Volume = Mathf.Min(v, m_MaxVolume)
         );
     }
 
@@ -296,7 +305,7 @@ public sealed class Musicker: MonoBehaviour {
 
         return new Lens<float>(
             ( ) => m_VolumeBySource[i],
-            (v) => m_VolumeBySource[i] = v
+            (v) => m_VolumeBySource[i] = Mathf.Min(v, m_MaxVolume)
         );
     }
 }
