@@ -31,7 +31,6 @@ public class Game: MonoBehaviour {
             Debug.Log("have fun");
         } else {
             Debug.Log("goodbye");
-            Quit();
         }
     }
 
