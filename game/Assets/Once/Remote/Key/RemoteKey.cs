@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using UnityEngine;
 
 /// a key for unlock requests
 public struct RemoteKey {
@@ -38,7 +39,7 @@ public struct RemoteKey {
         s_TempKey = null;
 
         // create dir if necessary
-        Directory.CreateDirectory(k_KeyDir);
+        Directory.CreateDirectory(FindDir());
 
         // write the file
         var f = File.CreateText(FindPath());
@@ -69,9 +70,14 @@ public struct RemoteKey {
         return new RemoteKey(next);
     }
 
+    /// get the path to the key dir on disk
+    static string FindDir() {
+        return Path.Combine(Application.persistentDataPath, k_KeyDir);
+    }
+
     /// get the path on disk
     static string FindPath() {
-        return Path.Combine(k_KeyDir, k_KeyCurrent);
+        return Path.Combine(FindDir(), k_KeyCurrent);
     }
 
     /// the string value
