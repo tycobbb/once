@@ -41,6 +41,14 @@ public class Game: MonoBehaviour {
     }
 
     // -- commands --
+    /// pick up the key
+    void PickUpKey() {
+        var str = GUIUtility.systemCopyBuffer;
+        var key = new RemoteKey(str);
+        key.Save(temp: true);
+        Debug.Log($"[game] save key from clipboard {str}");
+    }
+
     /// try to unlock the room
     void TryUnlockRoom() {
         StartCoroutine(TryUnlockRoomAsync());
@@ -55,17 +63,19 @@ public class Game: MonoBehaviour {
         var unlock = Unlock.Request();
         yield return unlock.Call();
 
-        // if success, start the game, otherwise quit
-        if (unlock.IsSuccess) {
-            HydrateLines(unlock.Payload.Lines);
-            OpenDoor();
-        } else {
+        // if it failed, quit
+        if (!unlock.IsSuccess) {
             Quit();
+        }
+        // otherwise, start the game
+        else {
+            UnlockRoom();
+            ShowLines(unlock.Payload.Lines);
         }
     }
 
     /// open the door
-    void OpenDoor() {
+    void UnlockRoom() {
         Debug.Log("have fun");
 
         // update game state
@@ -102,12 +112,12 @@ public class Game: MonoBehaviour {
     }
 
     /// add remote lines to scene
-    void HydrateLines(RemoteLine[] lines) {
-        StartCoroutine(HydrateLinesAsync(lines));
+    void ShowLines(RemoteLine[] lines) {
+        StartCoroutine(ShowLinesAsync(lines));
     }
 
     /// add remote lines to scene
-    IEnumerator HydrateLinesAsync(RemoteLine[] lines) {
+    IEnumerator ShowLinesAsync(RemoteLine[] lines) {
         // wait for stuff to start fading in
         yield return new WaitForSeconds(m_Room.RevealDelay);
 
@@ -151,6 +161,13 @@ public class Game: MonoBehaviour {
     }
 
     // -- events --
+    /// when the player picks up the key
+    public void OnPickUpKey() {
+        if (m_State == State.Door) {
+            PickUpKey();
+        }
+    }
+
     /// when the player opens the door
     public void OnOpenDoor() {
         if (m_State == State.Door) {

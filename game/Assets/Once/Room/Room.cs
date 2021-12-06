@@ -19,6 +19,9 @@ public class Room: MonoBehaviour {
 
     // -- nodes --
     [Header("nodes")]
+    [Tooltip("the key")]
+    [SerializeField] RoomItem m_Key;
+
     [Tooltip("the door")]
     [SerializeField] Door m_Door;
 
@@ -47,14 +50,20 @@ public class Room: MonoBehaviour {
         ColorLens()
             .Tween(m_HiddenColor, m_VisibleColor, m_RevealDuration);
 
-        // hide doown
+        // hide key & door
+        m_Key.AlphaLens()
+            .Tween(1.0f, 0.0f, m_ItemFadeDuration)
+            .OnComplete(() => {
+                Destroy(m_Key.gameObject);
+            });
+
         m_Door.AlphaLens()
             .Tween(1.0f, 0.0f, m_ItemFadeDuration)
             .OnComplete(() => {
                 Destroy(m_Door.gameObject);
             });
 
-        // show desk and typewriter
+        // show desk & typewriter
         m_Desk.SetActive(true);
         m_Desk.AlphaLens()
             .Tween(0.0f, 1.0f, m_ItemFadeDuration)

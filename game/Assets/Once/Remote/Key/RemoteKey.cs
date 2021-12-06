@@ -5,6 +5,9 @@ using System.Security.Cryptography;
 
 /// a key for unlock requests
 public struct RemoteKey {
+    // -- statics --
+    static string s_TempKey = null;
+
     // -- constants --
     /// the directory to save keys
     const string k_KeyDir = "Keys";
@@ -24,8 +27,14 @@ public struct RemoteKey {
 
     // -- commands --
     /// save to disk
-    public void Save() {
-        // create the dir if necessary
+    public void Save(bool temp = false) {
+        // if temp, store in-memory
+        if (temp) {
+            s_TempKey = m_Val;
+            return;
+        }
+
+        // otherwise, create dir if necessary
         Directory.CreateDirectory(k_KeyDir);
 
         // write the file
@@ -68,8 +77,13 @@ public struct RemoteKey {
     }
 
     // -- factories --
-    /// verify the can run
+    /// create a new key from disk (or temp key if available)
     public static RemoteKey Read() {
+        // if temp key is available use that
+        if (s_TempKey != null) {
+            return new RemoteKey(s_TempKey);
+        }
+
         var path = FindPath();
 
         // read the current key from disk

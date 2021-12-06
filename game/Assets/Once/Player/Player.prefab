@@ -616,8 +616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TextPrefab: {fileID: 3068584391910431687, guid: b8c98327eda33477dbc302a1e3016032, type: 3}
   m_WritingDistance: 4
-  m_WritingTarget: {fileID: 4850917938639824292}
-  m_Controller: {fileID: 8073847765199990129}
+  m_LineTarget: {fileID: 4850917938639824292}
+  m_Input: {fileID: 0}
   m_Interaction: {fileID: 234504465}
 --- !u!143 &8073847765199990126
 CharacterController:
@@ -724,15 +724,15 @@ MonoBehaviour:
     canMoveAround: 1
     unscaledTime: 0
     walkingSpeeds:
-      forwardSpeed: 5
-      sidewaysSpeed: 3.5
-      backwardsSpeed: 2
+      forwardSpeed: 2.5
+      sidewaysSpeed: 2
+      backwardsSpeed: 1
     canRun: 1
     runToggleMode: 0
     runSpeeds:
-      forwardSpeed: 30
-      sidewaysSpeed: 7.5
-      backwardsSpeed: 5
+      forwardSpeed: 5
+      sidewaysSpeed: 4
+      backwardsSpeed: 3
     stamina:
       enableStamina: 0
       drainStaminaWhen: 1
@@ -751,11 +751,11 @@ MonoBehaviour:
     airJumpTime: 0.1
     airJumpsAmount: 0
     allowAirJumpDirectionChange: 1
-    canCrouch: 0
+    canCrouch: 1
     crouchToggleMode: 0
     crouchSpeeds:
-      forwardSpeed: 2
-      sidewaysSpeed: 1.5
+      forwardSpeed: 1.5
+      sidewaysSpeed: 1.25
       backwardsSpeed: 1
     crouchJumping: 0
     crouchHeight: 1
