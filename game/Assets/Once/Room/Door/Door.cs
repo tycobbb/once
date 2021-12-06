@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 
@@ -10,7 +12,10 @@ public class Door: MonoBehaviour {
 
     // -- nodes --
     [Header("nodes")]
-    [Tooltip("the door's ambient noise")]
+    [Tooltip("the door as a room item")]
+    [SerializeField] RoomItem m_Item;
+
+    [Tooltip("the ambient noise")]
     [SerializeField] Musicker m_Ambient;
 
     // -- props --
@@ -32,44 +37,28 @@ public class Door: MonoBehaviour {
         ));
     }
 
-    // -- commands --
-    /// hide the door
-    public void Hide() {
-        AlphaLens()
-            .Tween(1.0f, 0.0f, m_HideDuration)
-            .OnComplete(() => {
-                Destroy(gameObject);
-            });
-    }
-
     // -- queries --
-    /// find all the door materials
+    /// find all unique door materials
     Material[] FindMaterials() {
-        var rs = GetComponentsInChildren<Renderer>();
-        var ms = new Material[rs.Length];
+        var ms = new HashSet<Material>();
 
-        for (var i = 0; i < rs.Length; i++) {
-            ms[i] = rs[i].material;
+        var rs = GetComponentsInChildren<Renderer>();
+        foreach (var r in rs) {
+            ms.Add(r.material);
         }
 
-        return ms;
+        return ms.ToArray();
     }
 
     /// a lens for the door's alpha
-    Lens<float> AlphaLens() {
-        return new Lens<float>(
-            ( ) => m_Materials[0].color.a,
-            (v) => {
-                // fade the materials
-                foreach (var m in m_Materials) {
-                    var c = m.color;
-                    c.a = v;
-                    m.color = c;
+    public Lens<float> AlphaLens() {
+        return m_Item.AlphaLens()
+            .Map(
+                (v) => v,
+                (v) => {
+                    m_Ambient.SetMaxVolume(v);
+                    return v;
                 }
-
-                // and audio
-                m_Ambient.SetMaxVolume(v);
-            }
-        );
+            );
     }
 }

@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: cb747bd5bb2a34b0a92d7bf0f0403bb6
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_bottomRowKey_group1Mat
+    second: {fileID: 2100000, guid: 7a61a55ecfc6047418c9d4e86b4d3274, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey10Mat
+    second: {fileID: 2100000, guid: 0d7c58740e44240f896a191651eb2732, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey11Mat
+    second: {fileID: 2100000, guid: 6e80953e719824f08bd1beef61b3c07f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey1Mat
+    second: {fileID: 2100000, guid: 84e435387276b4154b04f69284434f88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey2Mat
+    second: {fileID: 2100000, guid: 944b05519b88c4defa05bc7833ed2ae7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey3Mat
+    second: {fileID: 2100000, guid: 7b319847e743b4de3aef4dfed69d21dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey4Mat
+    second: {fileID: 2100000, guid: 8d21a944eea5b4af4b3a18f9a7f2449f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey5Mat
+    second: {fileID: 2100000, guid: 448a1fedb32fd4437860ad4b4da49e50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey6Mat
+    second: {fileID: 2100000, guid: bccefcfac5e2045918005ef309325dfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey7Mat
+    second: {fileID: 2100000, guid: b45ecc4e70ebc48bfa088f0384bb6985, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey8Mat
+    second: {fileID: 2100000, guid: 05cfac513145847eb9c3de7768ad226c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_bottomRowKey9Mat
+    second: {fileID: 2100000, guid: f9cd093ffee34476cae329858197120a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey10Mat
+    second: {fileID: 2100000, guid: f5950cf17f7a24c448c0d041f18bc07b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey12Mat
+    second: {fileID: 2100000, guid: 1497ea4a70a564bcd8368d1c5773ce78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey1Mat
+    second: {fileID: 2100000, guid: 2a28d42ce12b645ada75d6de4acd9d91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey2Mat
+    second: {fileID: 2100000, guid: a86e42283827c46818785dcb3ced7065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey3Mat
+    second: {fileID: 2100000, guid: 1cb2679803f244c23bcec512178bad14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey4Mat
+    second: {fileID: 2100000, guid: 049e8611d19364c3687d76c2f771690f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey5Mat
+    second: {fileID: 2100000, guid: 35ffb021088b6472680eaf87bd5d3583, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey6Mat
+    second: {fileID: 2100000, guid: c360a009be04e449a83325739708d6c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey7Mat
+    second: {fileID: 2100000, guid: 865dc02f1e1c24eaaa29e658cb360895, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey8Mat
+    second: {fileID: 2100000, guid: 2bfb467f2073e4dddaab657e1b713ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKey9Mat
+    second: {fileID: 2100000, guid: 37003578180e04feb8a681061d7e9b2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_highRowKeyMat
+    second: {fileID: 2100000, guid: 04e9ee0d191be45db9b5d29451ce7e24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey10Mat
+    second: {fileID: 2100000, guid: 477bd21d936574fb7b57c3dabbbc7a3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey11Mat
+    second: {fileID: 2100000, guid: e6f96968f9fe84cbf8344500cb345a3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey1Mat
+    second: {fileID: 2100000, guid: 5cfb782866b5b4763ba2addca7fb0dda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey2Mat
+    second: {fileID: 2100000, guid: 0149239c3ee7d4d4cb0280d2f019ddc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey3Mat
+    second: {fileID: 2100000, guid: 05619b2e15b8f401aa9603b6ecad2e02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey4Mat
+    second: {fileID: 2100000, guid: 266f1ba76b7a548ba875b677328e73fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey5Mat
+    second: {fileID: 2100000, guid: d9aba8507dffa4043a2c67b32c3f56a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey6Mat
+    second: {fileID: 2100000, guid: 56bf447bf74c74d2c8cfb8e0ef169511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey7Mat
+    second: {fileID: 2100000, guid: 0d6ac94cfdf6a484f9547c9c5f3ed78e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey8Mat
+    second: {fileID: 2100000, guid: 1382023ec83824cab804e22ae2c90a44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKey9Mat
+    second: {fileID: 2100000, guid: 016f8637a87b243ebb587ff85cd43415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_midRowKeyMat
+    second: {fileID: 2100000, guid: 5768f3a558ec54d5e94963e9e15b6c4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_pCube1Mat
+    second: {fileID: 2100000, guid: 8d4b32c9aec8f49af8c6bcda840edebe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_pCylinder3_pCylinder3Mat
+    second: {fileID: 2100000, guid: d5d268d691b404427bf9726ec0226918, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_spaceKeyMat
+    second: {fileID: 2100000, guid: d41fc5973edda43768c878ed8e22a59d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey10Mat
+    second: {fileID: 2100000, guid: a9b28766717e64bbdbe624eb13a015fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey11Mat
+    second: {fileID: 2100000, guid: b2bcb427860f0493f9274bbf20b7b0f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey12Mat
+    second: {fileID: 2100000, guid: 3aa1704b5d2774d11b3365b099f8d53c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey1Mat
+    second: {fileID: 2100000, guid: d126ce75e56f44a57b40762513e33909, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey2Mat
+    second: {fileID: 2100000, guid: 9d7674cbd4b2b41448f1094b9adc8716, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey3Mat
+    second: {fileID: 2100000, guid: 96dfcfa4bb63a4add825a233c9792436, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey4Mat
+    second: {fileID: 2100000, guid: c7fadc892d018472ea28c466ed44f331, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey5Mat
+    second: {fileID: 2100000, guid: f810667b1af354ee6a8fedb2ebd61a0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey6Mat
+    second: {fileID: 2100000, guid: 5103f97d3d9624a36a44d0aa0e02af5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey7Mat
+    second: {fileID: 2100000, guid: de898db058da44bccb25f855b2638273, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey8Mat
+    second: {fileID: 2100000, guid: dd8818fddbeae414da3cf36990116d0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKey9Mat
+    second: {fileID: 2100000, guid: 3730bbfe541fc41d8b9ab9bb75fd8cc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Typewriter_group1_topRowKeyMat
+    second: {fileID: 2100000, guid: 59a8b38300a7947f590c44972b7203d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_KeyTHingyMat
+    second: {fileID: 2100000, guid: 05726be2af2024720af3b07ec5641084, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCube2Mat
+    second: {fileID: 2100000, guid: 33316afbeb6cd49db9350d415b640c9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCube4Mat
+    second: {fileID: 2100000, guid: fa8ac3cad7ab24bdb9a639651c17294e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCube5Mat
+    second: {fileID: 2100000, guid: 7539d17df83c14ab5aa8a9e66aaaed3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCube7Mat
+    second: {fileID: 2100000, guid: d0e23ccfa00c34ae3b604feb36b574c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCube8Mat
+    second: {fileID: 2100000, guid: d297e9f7a5d49461083677e8d5fc04c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCylinder5Mat
+    second: {fileID: 2100000, guid: 88a6a0cfe5dc249c2a34f075de5e779d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCylinder6Mat
+    second: {fileID: 2100000, guid: 67fb1ecf9e73343fbb7935a03d690292, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group2_Typewriter_pCylinder7Mat
+    second: {fileID: 2100000, guid: 277868919c58649979f8006ed89f62e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder4_group2_TypewriterMat
+    second: {fileID: 2100000, guid: 6c591f941eeb04891a5e080a14181d17, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

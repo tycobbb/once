@@ -31,6 +31,7 @@ public class Game: MonoBehaviour {
     // -- commands --
     /// try to unlock the door
     void TryOpenDoor() {
+        OpenDoor(); return;
         StartCoroutine(TryOpenDoorAsync());
     }
 
