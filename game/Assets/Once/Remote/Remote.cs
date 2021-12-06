@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public sealed class Remote<I, O> {
     // -- constants --
     // the service host url
-    #if true
+    #if false
     const string k_HostUrl = "http://localhost:5000";
     #else
     const string k_HostUrl = "https://once-upon.herokuapp.com";
