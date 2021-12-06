@@ -17,11 +17,9 @@ public class Player: MonoBehaviour {
 
     // -- nodes --
     [Header("nodes")]
+    [UnityEngine.Serialization.FormerlySerializedAs("m_WritingTarget")]
     [Tooltip("the target for writing")]
-    [SerializeField] Transform m_WritingTarget;
-
-    [Tooltip("the gold player controller")]
-    [SerializeField] GoldPlayerController m_Controller;
+    [SerializeField] Transform m_LineTarget;
 
     [Tooltip("the gold player input")]
     [SerializeField] GoldPlayerInputSystem m_Input;
@@ -43,7 +41,7 @@ public class Player: MonoBehaviour {
     }
 
     void Start() {
-        var t = m_WritingTarget;
+        var t = m_LineTarget;
 
         // move the writing target to the interaction distance
         var p = t.localPosition;
@@ -61,13 +59,13 @@ public class Player: MonoBehaviour {
     // -- commands --
     /// grab the typewriter and start writing
     public void GrabTypewriter() {
-        m_WritingTarget.SetActive(true);
+        m_LineTarget.SetActive(true);
     }
 
     /// start writing a line of text
     public void StartLine() {
         // create a new text object
-        var d = m_WritingTarget;
+        var d = m_LineTarget;
         var text = Instantiate(
             m_TextPrefab,
             d.position,
@@ -87,7 +85,6 @@ public class Player: MonoBehaviour {
         m_TextInput = text.GetComponent<TMP_Text>();
 
         // switch to text input
-        // m_Controller.enabled = false;
         m_Input.enabled = false;
         m_Keyboard.onTextInput += OnTextInput;
     }
@@ -116,7 +113,6 @@ public class Player: MonoBehaviour {
 
         // switch to movement
         m_Input.enabled = true;
-        // m_Controller.enabled = true;
         m_Keyboard.onTextInput -= OnTextInput;
     }
 

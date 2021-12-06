@@ -25,10 +25,10 @@ public class Game: MonoBehaviour {
     State m_State = State.Door;
 
     // -- lifecycle --
-    void Start() {
-        OpenDoor();
-        GrabTypewriter();
-    }
+    // void Start() {
+    //     OpenDoor();
+    //     GrabTypewriter();
+    // }
 
     void Update() {
         RunCommands();
