@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4850917938639824292}
   - component: {fileID: 9058010449885011059}
   - component: {fileID: 6085175410774682023}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: WritingTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401352196620267489}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8073847764100763015}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &9058010449885011059
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -63,7 +63,19 @@ MonoBehaviour:
   customMessage: Press E to interact
   onInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: OnStartLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8073847763987698858
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +614,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbbd2b8bb5774953a746c0f6dcef634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TextPrefab: {fileID: 3068584391910431687, guid: b8c98327eda33477dbc302a1e3016032, type: 3}
+  m_WritingDistance: 4
   m_WritingTarget: {fileID: 4850917938639824292}
+  m_Controller: {fileID: 8073847765199990129}
   m_Interaction: {fileID: 234504465}
 --- !u!143 &8073847765199990126
 CharacterController:
@@ -727,7 +742,7 @@ MonoBehaviour:
       regenRateStill: 0.8
       regenRateMoving: 0.5
       regenWait: 1
-    canJump: 1
+    canJump: 0
     jumpingRequiresStamina: 0
     jumpStaminaRequire: 1
     jumpStaminaCost: 1

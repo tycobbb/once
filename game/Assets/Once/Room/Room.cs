@@ -28,9 +28,6 @@ public class Room: MonoBehaviour {
     [Tooltip("the typewriter")]
     [SerializeField] RoomItem m_Typewriter;
 
-    [Tooltip("the ground")]
-    [SerializeField] Renderer m_Ground;
-
     [Tooltip("the camera (for skybox)")]
     [SerializeField] Camera m_Camera;
 
@@ -84,10 +81,7 @@ public class Room: MonoBehaviour {
     Lens<Color> ColorLens() {
         return new Lens<Color>(
             ( ) => m_Camera.backgroundColor,
-            (v) => {
-                m_Camera.backgroundColor = v;
-                m_Ground.material.color = v;
-            }
+            (v) => m_Camera.backgroundColor = v
         );
     }
 }

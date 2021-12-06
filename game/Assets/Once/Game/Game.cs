@@ -25,10 +25,10 @@ public class Game: MonoBehaviour {
     State m_State = State.Door;
 
     // -- lifecycle --
-    // void Start() {
-    //     OpenDoor();
-    //     GrabTypewriter();
-    // }
+    void Start() {
+        OpenDoor();
+        GrabTypewriter();
+    }
 
     void Update() {
         RunCommands();
@@ -78,6 +78,10 @@ public class Game: MonoBehaviour {
         m_Player.GrabTypewriter();
     }
 
+    /// start writing a new line of text
+    void StartLine() {
+        m_Player.StartLine();
+    }
 
     /// quit the game
     void Quit() {
@@ -115,15 +119,17 @@ public class Game: MonoBehaviour {
         }
     }
 
+    /// when the player grabs the typewriter
     public void OnGrabTypewriter() {
         if (m_State == State.Typewriter) {
             GrabTypewriter();
         }
     }
 
-    public void OnStartWriting() {
+    /// when the player adds a line of text
+    public void OnStartLine() {
         if (m_State == State.Writing) {
-            Debug.Log("write!");
+            StartLine();
         }
     }
 }
