@@ -1,17 +1,17 @@
 using System;
 
-/// the unlock request params
+/// the request params for a key
 [Serializable]
-struct UnlockParams {
+struct RemoteKeyParams {
     /// the nonce as a base64 string
     public string Nonce;
 
     /// the next key as a base64 string
-    public string NextKey;
+    public string Next;
 
     // -- lifetime --
-    public UnlockParams(string nonce, string nextKey) {
+    public RemoteKeyParams(string nonce, string next) {
         Nonce = nonce;
-        NextKey = nextKey;
+        Next = next;
     }
 }

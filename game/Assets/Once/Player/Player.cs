@@ -1,4 +1,5 @@
 using Hertzole.GoldPlayer;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -92,8 +93,7 @@ public class Player: MonoBehaviour {
     /// finish the line of text
     void FinishLine() {
         // if there is a line of text
-        var text = m_TextInput;
-        if (text == null) {
+        if (m_TextInput == null) {
             return;
         }
 
@@ -101,6 +101,13 @@ public class Player: MonoBehaviour {
         if (!m_Keyboard.enterKey.wasPressedThisFrame) {
             return;
         }
+
+        StartCoroutine(FinishLineAsync());
+    }
+
+    /// finish the line of text
+    IEnumerator FinishLineAsync() {
+        var text = m_TextInput;
 
         // move text to root
         var t = text.transform;
@@ -114,6 +121,10 @@ public class Player: MonoBehaviour {
         // switch to movement
         m_Input.enabled = true;
         m_Keyboard.onTextInput -= OnTextInput;
+
+        // make add request
+        var add = AddLine.Request(text.text, t);
+        yield return add.Call();
     }
 
     // -- events --

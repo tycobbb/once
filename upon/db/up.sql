@@ -1,9 +1,15 @@
 -- create game table
-CREATE
-  TABLE game
-  (data json);
+CREATE TABLE game (
+  key VARCHAR(64)
+);
 
--- create singleton game rec
-INSERT
-  INTO game
-  VALUES ('{}');
+-- create lines table
+CREATE TABLE lines (
+  data JSON,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- create singleton game record
+INSERT INTO game VALUES (
+  ''
+);

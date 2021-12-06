@@ -3,8 +3,8 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 
-/// an unlock key
-public struct UnlockKey {
+/// a key for unlock requests
+public struct RemoteKey {
     // -- constants --
     /// the directory to save keys
     const string k_KeyDir = "Keys";
@@ -18,7 +18,7 @@ public struct UnlockKey {
 
     // -- lifetime --
     /// create a new key
-    public UnlockKey(string val) {
+    public RemoteKey(string val) {
         m_Val = val;
     }
 
@@ -44,7 +44,7 @@ public struct UnlockKey {
 
     // -- queries --
     /// compute the next key
-    public UnlockKey ComputeNext(string nonce) {
+    public RemoteKey ComputeNext(string nonce) {
         // build input from value and nonce
         var input = Convert.FromBase64String(m_Val)
             .Concat(Convert.FromBase64String(nonce))
@@ -54,7 +54,7 @@ public struct UnlockKey {
         var sha = SHA256.Create();
         var next = Convert.ToBase64String(sha.ComputeHash(input));
 
-        return new UnlockKey(next);
+        return new RemoteKey(next);
     }
 
     /// get the path on disk
@@ -69,7 +69,7 @@ public struct UnlockKey {
 
     // -- factories --
     /// verify the can run
-    public static UnlockKey Read() {
+    public static RemoteKey Read() {
         var path = FindPath();
 
         // read the current key from disk
@@ -80,6 +80,6 @@ public struct UnlockKey {
             val = "";
         }
 
-        return new UnlockKey(val);
+        return new RemoteKey(val);
     }
 }

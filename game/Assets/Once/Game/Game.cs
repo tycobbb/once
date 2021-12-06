@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,11 @@ public class Game: MonoBehaviour {
         Typewriter,
         Writing,
     }
+
+    // -- config --
+    [Header("config")]
+    [Tooltip("the line prefab")]
+    [SerializeField] GameObject m_LinePrefab;
 
     // -- nodes --
     [Header("nodes")]
@@ -46,11 +52,12 @@ public class Game: MonoBehaviour {
         m_State = State.Opening;
 
         // try the unlock service
-        var unlock = new Unlock();
+        var unlock = Unlock.Request();
         yield return unlock.Call();
 
         // if success, start the game, otherwise quit
         if (unlock.IsSuccess) {
+            HydrateLines(unlock.Payload.Lines);
             OpenDoor();
         } else {
             Quit();
@@ -92,6 +99,38 @@ public class Game: MonoBehaviour {
     #else
         Application.Quit();
     #endif
+    }
+
+    /// add remote lines to scene
+    void HydrateLines(RemoteLine[] lines) {
+        StartCoroutine(HydrateLinesAsync(lines));
+    }
+
+    /// add remote lines to scene
+    IEnumerator HydrateLinesAsync(RemoteLine[] lines) {
+        // wait for stuff to start fading in
+        yield return new WaitForSeconds(m_Room.RevealDelay);
+
+        // slowly instantiate all the lines
+        var i = 0;
+        foreach (var line in lines) {
+            // create a line
+            var obj = Instantiate(m_LinePrefab, line.Pos, line.Rot);
+            var txt = obj.GetComponent<TMP_Text>();
+            txt.text = line.Text;
+
+            // tween in the alpha
+            var alpha = new Lens<float>(
+                ( ) => txt.alpha,
+                (v) => txt.alpha = v
+            );
+
+            alpha.Tween(0.0f, 1.0f, 1.0f);
+
+            // wait a little for the next one
+            i++;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     /// run commands based on inputs

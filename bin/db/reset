@@ -1,5 +1,8 @@
 #!/bin/sh
-cd upon
+# remove game keys
+rm -rf game/Keys
+
+# reset database
 psql -U postgres -c "DROP DATABASE upon;"
 psql -U postgres -c "CREATE DATABASE upon;"
-psql -U postgres -d upon -f db/up.sql
+psql -U postgres -d upon -f upon/db/up.sql

@@ -55,16 +55,15 @@ public class Room: MonoBehaviour {
             });
 
         // show desk and typewriter
-        var delay = m_RevealDuration - m_ItemFadeDuration;
         m_Desk.SetActive(true);
         m_Desk.AlphaLens()
             .Tween(0.0f, 1.0f, m_ItemFadeDuration)
-            .SetDelay(delay);
+            .SetDelay(RevealDelay);
 
         m_Typewriter.SetActive(true);
         m_Typewriter.AlphaLens()
             .Tween(0.0f, 1.0f, m_ItemFadeDuration)
-            .SetDelay(delay);
+            .SetDelay(RevealDelay);
     }
 
     /// grab the typewriter off the desk
@@ -77,6 +76,11 @@ public class Room: MonoBehaviour {
     }
 
     // -- queries --
+    /// the delay until showing objects
+    public float RevealDelay {
+        get => m_RevealDuration - m_ItemFadeDuration;
+    }
+
     /// the lens for the room color
     Lens<Color> ColorLens() {
         return new Lens<Color>(
