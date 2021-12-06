@@ -51,43 +51,59 @@ public class Room: MonoBehaviour {
             .Tween(m_HiddenColor, m_VisibleColor, m_RevealDuration);
 
         // hide key & door
-        m_Key.AlphaLens()
-            .Tween(1.0f, 0.0f, m_ItemFadeDuration)
-            .OnComplete(() => {
-                Destroy(m_Key.gameObject);
-            });
-
-        m_Door.AlphaLens()
-            .Tween(1.0f, 0.0f, m_ItemFadeDuration)
-            .OnComplete(() => {
-                Destroy(m_Door.gameObject);
-            });
+        HideItem(m_Key, destroy: true);
+        HideItem(m_Door, destroy: true);
 
         // show desk & typewriter
-        m_Desk.SetActive(true);
-        m_Desk.AlphaLens()
-            .Tween(0.0f, 1.0f, m_ItemFadeDuration)
-            .SetDelay(RevealDelay);
-
-        m_Typewriter.SetActive(true);
-        m_Typewriter.AlphaLens()
-            .Tween(0.0f, 1.0f, m_ItemFadeDuration)
-            .SetDelay(RevealDelay);
+        ShowItem(m_Desk).SetDelay(RevealDelay);
+        ShowItem(m_Typewriter).SetDelay(RevealDelay);
     }
 
     /// grab the typewriter off the desk
     public void HideTypewriter() {
-        m_Typewriter.AlphaLens()
+        HideItem(m_Typewriter);
+    }
+
+    public void ShowTypewriter() {
+        ShowItem(m_Typewriter);
+    }
+
+    /// show the item
+    Tweener ShowItem<I>(I item) where I: Component, IRoomItem {
+        item.SetActive(true);
+
+        var tween = item
+            .AlphaLens()
+            .Tween(0.0f, 1.0f, m_ItemFadeDuration);
+
+        return tween;
+    }
+
+    /// hide the item
+    Tweener HideItem<I>(I item, bool destroy = false) where I: Component, IRoomItem {
+        var tween = item
+            .AlphaLens()
             .Tween(1.0f, 0.0f, m_ItemFadeDuration)
             .OnComplete(() => {
-                m_Typewriter.SetActive(false);
+                if (destroy) {
+                    Destroy(item.gameObject);
+                } else {
+                    item.SetActive(false);
+                }
             });
+
+        return tween;
     }
 
     // -- queries --
     /// the delay until showing objects
     public float RevealDelay {
         get => m_RevealDuration - m_ItemFadeDuration;
+    }
+
+    /// the delay until showing objects
+    public float ItemFadeDuration {
+        get => m_ItemFadeDuration;
     }
 
     /// the lens for the room color

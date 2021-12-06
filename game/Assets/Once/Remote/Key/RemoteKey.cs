@@ -34,7 +34,10 @@ public struct RemoteKey {
             return;
         }
 
-        // otherwise, create dir if necessary
+        // otherwise, destroy the temp key
+        s_TempKey = null;
+
+        // create dir if necessary
         Directory.CreateDirectory(k_KeyDir);
 
         // write the file

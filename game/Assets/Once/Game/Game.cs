@@ -10,7 +10,9 @@ public class Game: MonoBehaviour {
         Door,
         Opening,
         Typewriter,
+        Grabbing,
         Writing,
+        Finished,
     }
 
     // -- config --
@@ -87,17 +89,44 @@ public class Game: MonoBehaviour {
 
     /// grab the typewriter
     void GrabTypewriter() {
+        StartCoroutine(GrabTypewriterAsync());
+    }
+
+    /// grab the typewriter
+    IEnumerator GrabTypewriterAsync() {
         // update game state
-        m_State = State.Writing;
+        m_State = State.Grabbing;
 
         // update entities
         m_Room.HideTypewriter();
         m_Player.GrabTypewriter();
+
+        yield return new WaitForSeconds(3.0f);
+        m_State = State.Writing;
     }
 
     /// start writing a new line of text
     void StartLine() {
         m_Player.StartLine();
+    }
+
+    /// return the typewriter and end the game
+    void ReturnTypewriter() {
+        StartCoroutine(ReturnTypewriterAsync());
+    }
+
+    /// return the typewriter and end the game
+    IEnumerator ReturnTypewriterAsync() {
+        // copy key to clipboard
+        var key = RemoteKey.Read();
+        GUIUtility.systemCopyBuffer = key.ToString();
+
+        // show typewriter again
+        m_Room.ShowTypewriter();
+
+        // and then quit
+        yield return new WaitForSeconds(m_Room.ItemFadeDuration);
+        Quit();
     }
 
     /// quit the game
@@ -179,12 +208,14 @@ public class Game: MonoBehaviour {
     public void OnGrabTypewriter() {
         if (m_State == State.Typewriter) {
             GrabTypewriter();
+        } else if (m_State == State.Writing) {
+            ReturnTypewriter();
         }
     }
 
     /// when the player adds a line of text
     public void OnStartLine() {
-        if (m_State == State.Writing) {
+        if (m_State > State.Typewriter) {
             StartLine();
         }
     }

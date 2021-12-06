@@ -3,7 +3,13 @@ using System.Linq;
 using UnityEngine;
 
 /// a thing in the room (that can be faded)
-public class RoomItem: MonoBehaviour {
+public interface IRoomItem {
+    /// a lens for the thing's alpha
+    Lens<float> AlphaLens();
+}
+
+/// a thing in the room (that can be faded)
+public class RoomItem: MonoBehaviour, IRoomItem {
     // -- props --
     /// the door materials
     Material[] m_Materials;
@@ -15,7 +21,7 @@ public class RoomItem: MonoBehaviour {
     }
 
     // -- props/hot --
-    /// a lens for the door's alpha
+    /// a lens for the thing's alpha
     public Lens<float> AlphaLens() {
         return new Lens<float>(
             ( ) => m_Materials[0].color.a,
@@ -39,6 +45,8 @@ public class RoomItem: MonoBehaviour {
         foreach (var r in rs) {
             ms.Add(r.material);
         }
+
+        Debug.Log($"{name} found {ms.Count}");
 
         return ms.ToArray();
     }

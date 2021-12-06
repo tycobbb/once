@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 
 /// the door that unlocks the game
-public class Door: MonoBehaviour {
+public class Door: MonoBehaviour, IRoomItem {
     // -- nodes --
     [Header("nodes")]
     [Tooltip("the door as a room item")]
