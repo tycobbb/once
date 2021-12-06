@@ -45,7 +45,7 @@ public class Room: MonoBehaviour {
 
     // -- commands --
     /// reveal the white room
-    public void Reveal() {
+    public void Unlock() {
         // fade background
         ColorLens()
             .Tween(m_HiddenColor, m_VisibleColor, m_RevealDuration);
@@ -53,7 +53,9 @@ public class Room: MonoBehaviour {
         // hide doown
         m_Door.AlphaLens()
             .Tween(1.0f, 0.0f, m_ItemFadeDuration)
-            .OnComplete(() => Destroy(m_Door.gameObject));
+            .OnComplete(() => {
+                Destroy(m_Door.gameObject);
+            });
 
         // show desk and typewriter
         var delay = m_RevealDuration - m_ItemFadeDuration;
@@ -66,6 +68,15 @@ public class Room: MonoBehaviour {
         m_Typewriter.AlphaLens()
             .Tween(0.0f, 1.0f, m_ItemFadeDuration)
             .SetDelay(delay);
+    }
+
+    /// grab the typewriter off the desk
+    public void HideTypewriter() {
+        m_Typewriter.AlphaLens()
+            .Tween(1.0f, 0.0f, m_ItemFadeDuration)
+            .OnComplete(() => {
+                m_Typewriter.SetActive(false);
+            });
     }
 
     // -- queries --

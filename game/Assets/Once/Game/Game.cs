@@ -8,13 +8,14 @@ public class Game: MonoBehaviour {
     enum State {
         Door,
         Opening,
-        Desk
+        Typewriter,
+        Writing,
     }
 
     // -- nodes --
     [Header("nodes")]
     [Tooltip("the player")]
-    [SerializeField] Player m_player;
+    [SerializeField] Player m_Player;
 
     [Tooltip("the room")]
     [SerializeField] Room m_Room;
@@ -24,23 +25,27 @@ public class Game: MonoBehaviour {
     State m_State = State.Door;
 
     // -- lifecycle --
+    // void Start() {
+    //     OpenDoor();
+    //     GrabTypewriter();
+    // }
+
     void Update() {
         RunCommands();
     }
 
     // -- commands --
-    /// try to unlock the door
-    void TryOpenDoor() {
-        OpenDoor(); return;
-        StartCoroutine(TryOpenDoorAsync());
+    /// try to unlock the room
+    void TryUnlockRoom() {
+        StartCoroutine(TryUnlockRoomAsync());
     }
 
-    /// try to unlock the door
-    IEnumerator TryOpenDoorAsync() {
+    /// try to unlock the room
+    IEnumerator TryUnlockRoomAsync() {
         // update game state
         m_State = State.Opening;
 
-        // try to unlock the game
+        // try the unlock service
         var unlock = new Unlock();
         yield return unlock.Call();
 
@@ -52,18 +57,29 @@ public class Game: MonoBehaviour {
         }
     }
 
-    // open the door
+    /// open the door
     void OpenDoor() {
         Debug.Log("have fun");
 
         // update game state
-        m_State = State.Desk;
+        m_State = State.Typewriter;
 
-        // run transitions
-        m_Room.Reveal();
+        // update entities
+        m_Room.Unlock();
     }
 
-    // quit the game
+    /// grab the typewriter
+    void GrabTypewriter() {
+        // update game state
+        m_State = State.Writing;
+
+        // update entities
+        m_Room.HideTypewriter();
+        m_Player.GrabTypewriter();
+    }
+
+
+    /// quit the game
     void Quit() {
         Debug.Log("goodbye");
 
@@ -95,7 +111,19 @@ public class Game: MonoBehaviour {
     /// when the player opens the door
     public void OnOpenDoor() {
         if (m_State == State.Door) {
-            TryOpenDoor();
+            TryUnlockRoom();
+        }
+    }
+
+    public void OnGrabTypewriter() {
+        if (m_State == State.Typewriter) {
+            GrabTypewriter();
+        }
+    }
+
+    public void OnStartWriting() {
+        if (m_State == State.Writing) {
+            Debug.Log("write!");
         }
     }
 }

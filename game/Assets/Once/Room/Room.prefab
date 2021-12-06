@@ -352,18 +352,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4421775163344287318, guid: 1d0a8fec97a9642a787edabb068727ee, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.8828
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421775163344287318, guid: 1d0a8fec97a9642a787edabb068727ee, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8828
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421775163344287318, guid: 1d0a8fec97a9642a787edabb068727ee, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8828
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421775163344287318, guid: 1d0a8fec97a9642a787edabb068727ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.25203243
       objectReference: {fileID: 0}
@@ -407,10 +395,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Typewriter
       objectReference: {fileID: 0}
-    - target: {fileID: 4421775163344287319, guid: 1d0a8fec97a9642a787edabb068727ee, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d0a8fec97a9642a787edabb068727ee, type: 3}
 --- !u!4 &6665292718049122427 stripped
@@ -440,25 +424,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desk
       objectReference: {fileID: 0}
-    - target: {fileID: 3984349902035384466, guid: 4fa604ec41e6f42deac6d2dabe323f69, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3984349902035384467, guid: 4fa604ec41e6f42deac6d2dabe323f69, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984349902035384467, guid: 4fa604ec41e6f42deac6d2dabe323f69, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.9206
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984349902035384467, guid: 4fa604ec41e6f42deac6d2dabe323f69, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.9206
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984349902035384467, guid: 4fa604ec41e6f42deac6d2dabe323f69, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.9206
       objectReference: {fileID: 0}
     - target: {fileID: 3984349902035384467, guid: 4fa604ec41e6f42deac6d2dabe323f69, type: 3}
       propertyPath: m_LocalPosition.x
